@@ -186,14 +186,14 @@ function playGame()
         {
             alphabetButtons[i].disabled = false;
             alphabetButtons[i].className = "alphabetLetter active";
-            alphabetButtons[i].style.color = "white";
+            alphabetButtons[i].style.color = "black";
         }
 
         //resetting all of the hearts
         var hearts = document.getElementsByClassName("heart");
         for (let i = 0; i < hearts.length; i++)
         {
-            hearts[i].src = "visualRecources/filledHeart.png";
+            hearts[i].src = "filledHeart.png";
         }
 
         console.log(chosenTheme);
@@ -256,14 +256,14 @@ function playGame()
         {
             alphabetButtons[i].disabled = false;
             alphabetButtons[i].className = "alphabetLetter active";
-            alphabetButtons[i].style.color = "white";
+            alphabetButtons[i].style.color = "black";
         }
 
         //resetting all of the hearts
         var hearts = document.getElementsByClassName("heart");
         for (let i = 0; i < hearts.length; i++)
         {
-            hearts[i].src = "visualRecources/filledHeart.png";
+            hearts[i].src = "filledHeart.png";
         }
 
         console.log(chosenTheme);
@@ -427,7 +427,7 @@ function removeHmph()
 function removeHeart() 
 {
     console.log("hello noob");
-    document.getElementById("heart" + incorrectGuesses).src = "visualRecources/unfilledHeart.png";
+    document.getElementById("heart" + incorrectGuesses).src = "unfilledHeart.png";
 }
 
 function switchExpression()
