@@ -1,0 +1,325 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pangolin', cursive;
+}
+
+/*creating css colour variables which contain colour codes*/
+/*useful for when switching between light mode and dark mode*/
+/*learned about css variables from w3schools https://www.w3schools.com/css/css3_variables.asp*/
+:root {
+  --navBar: #fc4f1b;
+  --white: white;
+  --offwhite: #f2f2f2;
+  --red: #cb3b24;
+  --offblack: #222831;
+  --grey: #393e46;
+  --iconHover: #e7e7e7;
+  --wrongGuess: #da8181;
+  --correctGuess: #99d880;
+}
+
+
+
+.hangMan {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1000px;
+    height: 564px;
+    background-color: aqua;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeContainer {
+    background: url(visualRecources/homeScreen2.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.containerItems {
+    width: 95%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.icons {
+    display: flex;
+    height: 50px;
+}
+
+.icon {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    width: 60px;
+}
+
+.icon img {
+    height: 30px;
+    
+}
+
+.icon:hover {
+    opacity: 50%;
+}
+
+#play {
+    position: absolute;
+    top: 300px;
+    width: fit-content;
+    right: 200px;
+    float: right;
+    font-size: 64px;
+    background: transparent;
+    border: none;
+    color: rgb(230, 230, 230);
+}
+
+#play:after, #playAgain:after {
+    content: '';
+    height: 10px;
+    width: 0%;
+    background: url(visualRecources/underline.png);
+    background-size: cover;
+    border-radius: 10px;
+    display: block;
+    transition: .2s ease-in-out;
+}
+
+#play:hover::after, #playAgain:hover::after {
+    content:"";
+    height: 10px;
+    width: 100%;
+    background: url(visualRecources/underline.png);
+    background-size: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+#tagLine {
+    color: #788d7c;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.themeContainer {
+    background: url(visualRecources/chalkboard.jpg);
+    background-size: cover;
+}
+
+.themeSelection {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#themesTitle {
+    width: 300px;
+}
+
+.themeBox {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.themeButton {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+}
+
+.themeButton:hover {
+    opacity: 50%;
+}
+
+.playContainer {
+    background: url(visualRecources/playPage.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.bobStage {
+    width: 450px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#hmph {
+    width: 350px;
+    position: absolute;
+    left: 60px;
+    opacity: 0%;
+}
+
+.hmph {
+    opacity: 100%;
+    animation-name: hmphAnimation;
+    animation-duration: 1.5s;
+}
+
+@keyframes hmphAnimation {
+    0% {opacity: 0%;}
+    50% {opacity: 100%;}
+    100% {opacity: 0%;}
+}
+
+.themeSelected {
+    font-size: 24px;
+    top: 0;
+}
+
+#themeText{
+    color: rgb(159, 180, 161);
+}
+
+.wordText, .themeSelected {
+    right: 0;
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.wordText {
+    top: 50px;
+}
+
+#word {
+    color: #e7e7e7;
+    font-size: 24px;
+    text-align: center;
+}
+
+.alphabet {
+    width: 475px;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+}
+
+.alphabetItems {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    /*
+    grid-auto-flow: dense;
+    direction: rtl;
+    */
+    gap: 5px;
+}
+
+.alphabetLetter {
+    aspect-ratio: 1/1;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+}
+
+.alphabetItems #S {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.active:hover {
+    opacity: 50%;
+}
+
+.hearts {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.heart {
+    height: 35px;
+}
+
+
+.gameOverContainer  {
+    background: url(visualRecources/gameOver.jpg);
+    background-size: cover;
+}
+
+.gameOverContainer .containerItems {
+    align-items: center;
+    text-align: center;
+}
+
+#bobEyes {
+    width: 600px;
+    margin-top: 70px;
+    position: absolute;
+}
+
+.gameOver {
+    margin-top: 350px;
+}
+
+#playAgain {
+    font-size: 48px;
+    background: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
+}
+
+#playAgain:after {
+    background: url(visualRecources/underlineDark.png);
+    background-size: cover;
+}
+
+#playAgain:hover::after {
+    background: url(visualRecources/underlineDark.png);
+    background-size: cover;
+}
+
+
+/*Modal*/
+.modal-content {
+    background: url(visualRecources/linedPaper.jpg);
+    background-size: cover;
+    height: 300px;
+    border-radius: 0px;
+    border: none;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalExitText {
+    position: absolute;
+    bottom: 0;
+}
+
+#hint{
+    text-align: center;
+    font-size: 16px;
+    width: 300px;
+}
